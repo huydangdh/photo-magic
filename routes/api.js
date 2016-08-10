@@ -12,8 +12,6 @@ router.get('/homepage/:limit/:offset', function (req, res) {
     var offset = req.params.offset;
 
     api.get(limit, offset, function callback(body) {
-        res.header("Access-Control-Allow-Origin", "*");
-        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
         res.setHeader('Content-Type', 'application/json');
         res.status(200).send(body);
     });
