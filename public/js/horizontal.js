@@ -132,7 +132,7 @@ function _doPostBack() {
  */
 function getImages(limit, offset) {
     $('.progress').show();
-    $.get("http://localhost:8888/api/homepage/" + limit + "/" + offset, function (data, status) {
+    $.get("/api/homepage/" + limit + "/" + offset, function (data, status) {
         if(status == "success"){
             var container = $('.my-gallery');
             var json = data.images;
