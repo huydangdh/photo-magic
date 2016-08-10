@@ -9,10 +9,10 @@ var image = require('../modules/image-size');
  * Lấy về ảnh theo số lượng.
  **********************************************************************************************************************/
 
-router.get('/homepage/:limit/:offset', function (req, res){
+router.get('/homepage/:limit/:offset', function (req, res) {
     var limit = req.params.limit;
     var offset = req.params.offset;
-    
+
     api.get(limit, offset, function callback(body) {
         res.header("Access-Control-Allow-Origin", "*");
         res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -48,7 +48,7 @@ router.post('/images', function (req, res) {
 
 router.get('/images/status/:uuid', function imageResponse(req, res, next) {
     var uuid = req.params.uuid;
-    
+
     api.status(uuid, function imageResponse(status) {
         res.setHeader('Content-Type', 'application/json');
         res.status(200).send(status);
