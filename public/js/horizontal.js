@@ -1,5 +1,3 @@
-/*global $, jQuery, alert, FileReader, angular*/
-
 var filter = {
     name: 'Starburst',
     get nameFilter(){
@@ -22,42 +20,6 @@ var image = {
 jQuery(function ($) {
 	'use strict';
 
-	// -------------------------------------------------------------
-	//   Force Centered Navigation
-	// -------------------------------------------------------------
-	(function () {
-		// var $frame = $('#forcecentered');
-		// var $wrap  = $frame.parent();
-		//
-		// // Call Sly on frame
-		// $frame.sly({
-		// 	horizontal: 1,
-		// 	itemNav: 'forceCentered',
-		// 	smart: 1,
-		// 	activateMiddle: 1,
-		// 	activateOn: 'click',
-		// 	mouseDragging: 1,
-		// 	touchDragging: 1,
-		// 	releaseSwing: 1,
-		// 	startAt: 0,
-		// 	scrollBar: $wrap.find('.scrollbar'),
-		// 	scrollBy: 2,
-		// 	speed: 300,
-		// 	elasticBounds: 1,
-		// 	easing: 'easeOutExpo',
-		// 	dragHandle: 1,
-		// 	dynamicHandle: 1,
-		// 	clickBar: 1,
-		//
-		// 	// Buttons
-		// 	prev: $wrap.find('.prev'),
-		// 	next: $wrap.find('.next')
-		// });
-	}());
-
-	/*******************************************************************************************************************
-     * High Light
-     ******************************************************************************************************************/
 	(function () {
 		$("div.highlight-container").click(function(){
 
@@ -69,13 +31,14 @@ jQuery(function ($) {
             filter.nameFilter = div["0"].children[1].children["0"].textContent;
 		});
 	}());
+	
     $('.button-collapse').sideNav();
 
     $('#my-gallery').on('click','img.gallery-img',function(event){
         console.log(event);
     });
 
-    //getImages(10,0);
+    getImages(10,0);
 });
 
 /**
@@ -161,6 +124,7 @@ function _doPostBack() {
             }
         });
 }
+
 /**
  * Lấy số lượng ảnh
  * @param {number} limit
@@ -183,7 +147,6 @@ function getImages(limit, offset) {
 
 }
 
-// TEST JS REGION
 var openPhotoSwipe = function (url, caption) {
     var pswpElement = document.querySelectorAll('.pswp')[0];
 
