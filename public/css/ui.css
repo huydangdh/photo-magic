@@ -1,0 +1,54 @@
+/* Filter Previews Container */
+div > #filter-previews-container {
+    background-color: #222;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    margin-top: 25px;
+}
+div > #filter-previews-container-inner {
+    white-space: nowrap;
+    padding: 15px 0px 10px 0px;
+}
+.highlight-container {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    vertical-align: top;
+    padding: 4px;
+    margin-right: 3px;
+    color: #ee6e73;
+}
+
+.highlight-container > img {
+    cursor: pointer;
+    display: block;
+    width: 145px;
+    height: 145px;
+}
+.highlight-container > .filter-name-container {
+    bottom: 0px;
+    background-color: rgba(0, 0, 0, 0.9);
+    text-align: center;
+    font-size: medium;
+    font-family: inherit;
+}
+.highlight-container.highlighted {
+    top: -10px;
+    background-color: #5070a3;
+}
+.highlight-container.highlighted > .filter-name-container {
+    background-color: #5070a3;
+    color: white;
+}
+img.gallery-img {
+    width: 100%;
+}
+@media (max-width: 736px){
+    .highlight-container > img {
+        width: 115px;
+        height: 115px;
+    }
+}
+.my-gallery {
+    margin-top: 25px;
+}
