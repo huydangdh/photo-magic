@@ -3,12 +3,10 @@ var router = express.Router();
 var api = require('../modules/api-dream-scope');
 var image = require('../modules/image-size');
 
-// API =================================================================================================================
-
 /***********************************************************************************************************************
  * Lấy về ảnh theo số lượng.
  **********************************************************************************************************************/
-
+ 
 router.get('/homepage/:limit/:offset', function (req, res) {
     var limit = req.params.limit;
     var offset = req.params.offset;
