@@ -1,4 +1,30 @@
-{
-  "require": false,
-  "laxcomma": false
-}
+ 
+*nut them
+// Kiểm tra SĐT và Email
+                if (KiemTraSDT(tbxSoDT.Text))
+                {
+                    // Kiểm tra tồn tại mã khách hàng
+                    if (KiemTraID(tbxMaNV.Text)) MessageBox.Show("Mã khách hàng đã tồn tại", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    else
+                    {
+                        string sql = @"INSERT INTO tblKhachHang" + "(tbxMaNV,tbxHoTen,cbxGioiTinh,dtpNgaySinh,tbxSoDT,tbxDiaChi,dtpNgayVaoLam,tbxTaiKhoan,tbxMatKhau,cbxNhomQuyen) VALUES (";
+                        sql += "'" + tbxMaNV.Text + "',";
+                        sql += "'" + tbxHoTen.Text + "',";
+                        sql += "'" + cbxGioiTinh.Text + "',";
+                        sql += "'" + dtpNgaySinh.Value.Date + "',";
+                        sql += "'" + tbxSoDT.Text + "',";
+                        sql += "'" + tbxEmail.Text + "',";
+                        sql += "'" + tbxDiaChi.Text + ",";
+                        sql += "'" + dtpNgayVaoLam.Value.Date + ",";
+                        sql += "'" + tbxTaiKhoan.Text + ",";
+                        sql += "'" + tbxMatKhau.Text + ",";
+                        sql += "'" + cbxNhomQuyen.Text + "'";
+                        sql += ")";
+
+                        TruyVanDuLieu(sql);
+                        ResetGiaTri();
+
+                        btnSua.Enabled = true;
+                        btnXoa.Enabled = true;
+                    }
+                }
